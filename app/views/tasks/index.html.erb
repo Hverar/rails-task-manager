@@ -1,0 +1,24 @@
+<h1>Tasks</h1>
+<%= link_to "New Task", new_task_path %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <!-- Task title link -->
+      <strong><%= link_to task.title, task_path(task) %></strong><br>
+
+      <!-- Task details -->
+      <em><%= task.details %></em><br>
+
+      <!-- Completion checkbox form (separate) -->
+      <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+        <%= f.check_box :completed, { onchange: 'this.form.submit(); event.stopPropagation();' } %>
+        <%= f.label :completed %>
+      <% end %>
+
+      <!-- Edit + Delete -->
+      <%= link_to "Edit", edit_task_path(task) %> |
+      <%= link_to "Delete", task_path(task), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
