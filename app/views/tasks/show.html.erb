@@ -1,10 +1,29 @@
-<h1><%= @task.title %></h1>
+<div class="container my-5">
+  <div class="card shadow-lg p-4">
+    <h1 class="text-center mb-3 text-primary"><%= @task.title %></h1>
 
-<p> <strong>Details:</strong><%= @task.details %></p>
-<p> <strong>Completed:</strong><%= @task.completed %></p>
+    <p class="mb-3"> <strong>Details:</strong> <%= @task.details %></p>
 
-<%= link_to "Delete",
-  task_path(@task),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-<%= link_to "Back to Home", tasks_path, class: "btn" %>
+    <p class="mb-4">
+      <strong>Completed:</strong>
+      <% if @task.completed %>
+        <span class="badge bg-success p-2">Completed</span>
+      <% else %>
+        <span class="badge bg-warning p-2">Not Completed</span>
+      <% end %>
+    </p>
+
+    <div class="d-flex justify-content-between">
+      <!-- Delete Button with black border -->
+      <%= link_to "Delete",
+          task_path(@task),
+          method: :delete,
+          data: { turbo_confirm: "Are you sure?" },
+          class: "btn btn-danger btn-lg border-dark"
+      %>
+
+      <!-- Back to Home Button with black border -->
+      <%= link_to "Back to Home", tasks_path, class: "btn btn-primary btn-lg border-dark" %>
+    </div>
+  </div>
+</div>

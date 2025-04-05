@@ -14,3 +14,78 @@
  *= require_self
  */
 /* app/assets/stylesheets/application.css */
+
+/* Scoped styling for tasks#show page */
+.tasks.show .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Title styling */
+.tasks.show h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* General paragraph styling */
+.tasks.show p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Task status styling */
+.tasks.show .task-status {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* 'Completed' status styling */
+.tasks.show .completed {
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* 'Not Completed' status styling */
+.tasks.show .not-completed {
+  background-color: #ffc107;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* Button styling */
+.tasks.show .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.tasks.show .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for 'Back to Home' and other buttons */
+.tasks.show .btn-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.tasks.show .btn-link:hover {
+  text-decoration: underline;
+}
